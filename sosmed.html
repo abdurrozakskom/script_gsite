@@ -13,160 +13,142 @@
 <style>
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 html,
 body{
-width:100%;
-background:transparent;
-overflow-x:hidden;
-font-family:Arial,Helvetica,sans-serif;
+    width:100%;
+    background:transparent;
+    overflow-x:hidden;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-padding:8px;
+    padding:8px;
 }
 
-/* Grid */
+/* ==========================
+   SOCIAL GRID
+========================== */
 
 .social-grid{
-
-display:grid;
-gap:12px;
-
-grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-
+    display:grid;
+    gap:12px;
 }
 
-/* Desktop */
-
-@media(min-width:1400px){
-
-.social-grid{
-
-grid-template-columns:repeat(10,1fr);
-
-}
-
-}
-
-/* Laptop */
-
-@media(max-width:1399px){
-
-.social-grid{
-
-grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-
-}
-
+/* Desktop & Laptop
+   2 Baris x 6 Tombol */
+@media (min-width:992px){
+    .social-grid{
+        grid-template-columns:repeat(6,1fr);
+    }
 }
 
 /* Tablet */
-
-@media(max-width:768px){
-
-.social-grid{
-
-grid-template-columns:repeat(2,1fr);
-
-}
-
+@media (min-width:768px) and (max-width:991px){
+    .social-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
 /* HP */
-
-@media(max-width:480px){
-
-.social-grid{
-
-grid-template-columns:1fr;
-
+@media (min-width:481px) and (max-width:767px){
+    .social-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
+/* HP Kecil */
+@media (max-width:480px){
+    .social-grid{
+        grid-template-columns:1fr;
+    }
 }
 
-/* Button */
+/* ==========================
+   BUTTON
+========================== */
 
 .social-btn{
 
-display:flex;
-align-items:center;
-justify-content:center;
-gap:10px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:10px;
 
-padding:12px;
+    width:100%;
+    min-height:52px;
 
-border-radius:40px;
+    padding:12px 15px;
 
-background:#fece02;
+    background:#fece02;
+    color:#101010;
 
-color:#101010;
+    text-decoration:none;
 
-text-decoration:none;
+    border-radius:40px;
 
-font-weight:600;
+    font-weight:600;
+    font-size:15px;
 
-transition:.3s;
+    white-space:nowrap;
 
-position:relative;
+    position:relative;
+    overflow:hidden;
 
-overflow:hidden;
+    transition:.3s;
 
 }
 
 .social-btn:hover{
 
-background:#f0c400;
+    background:#f0c400;
+    color:#101010;
 
-transform:translateY(-3px);
-
-color:#101010;
+    transform:translateY(-3px);
 
 }
 
 .social-btn i{
-
-font-size:20px;
-
+    font-size:18px;
 }
+
+/* Shine Effect */
 
 .social-btn::before{
 
-content:"";
+    content:"";
 
-position:absolute;
+    position:absolute;
 
-top:0;
-left:-120%;
+    top:0;
+    left:-120%;
 
-width:60%;
-height:100%;
+    width:60%;
+    height:100%;
 
-background:rgba(255,255,255,.35);
+    background:rgba(255,255,255,.35);
 
-transform:skewX(-25deg);
+    transform:skewX(-25deg);
 
-transition:.6s;
+    transition:.6s;
 
 }
 
 .social-btn:hover::before{
 
-left:130%;
+    left:130%;
 
 }
 
-@media(max-width:768px){
+@media (max-width:768px){
 
-.social-btn{
-
-font-size:14px;
-
-}
+    .social-btn{
+        font-size:14px;
+    }
 
 }
 
@@ -180,25 +162,65 @@ font-size:14px;
 
 <div class="social-grid">
 
-<a class="social-btn" href="https://wa.me/6289675223353" target="_blank"><i class="fa-brands fa-whatsapp"></i>WhatsApp</a>
+<a class="social-btn" href="https://wa.me/6289675223353" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+<span>WhatsApp</span>
+</a>
 
-<a class="social-btn" href="https://instagram.com/abdurrozak.skom" target="_blank"><i class="fa-brands fa-instagram"></i>Instagram</a>
+<a class="social-btn" href="https://instagram.com/abdurrozak.skom" target="_blank">
+<i class="fa-brands fa-instagram"></i>
+<span>Instagram</span>
+</a>
 
-<a class="social-btn" href="https://threads.com/@abdurrozak.skom" target="_blank"><i class="fa-brands fa-threads"></i>Threads</a>
+<a class="social-btn" href="https://threads.com/@abdurrozak.skom" target="_blank">
+<i class="fa-brands fa-threads"></i>
+<span>Threads</span>
+</a>
 
-<a class="social-btn" href="https://facebook.com/abdur.rozak.skom" target="_blank"><i class="fa-brands fa-facebook-f"></i>Facebook</a>
+<a class="social-btn" href="https://facebook.com/abdur.rozak.skom" target="_blank">
+<i class="fa-brands fa-facebook-f"></i>
+<span>Facebook</span>
+</a>
 
-<a class="social-btn" href="https://tiktok.com/@abdurrozak.skom" target="_blank"><i class="fa-brands fa-tiktok"></i>TikTok</a>
+<a class="social-btn" href="https://tiktok.com/@abdurrozak.skom" target="_blank">
+<i class="fa-brands fa-tiktok"></i>
+<span>TikTok</span>
+</a>
 
-<a class="social-btn" href="https://id.pinterest.com/jacktersakiti/" target="_blank"><i class="fa-brands fa-pinterest-p"></i>Pinterest</a>
+<a class="social-btn" href="https://id.pinterest.com/jacktersakiti/" target="_blank">
+<i class="fa-brands fa-pinterest-p"></i>
+<span>Pinterest</span>
+</a>
 
-<a class="social-btn" href="https://github.com/abdurrozakskom" target="_blank"><i class="fa-brands fa-github"></i>GitHub</a>
+<a class="social-btn" href="https://github.com/abdurrozakskom" target="_blank">
+<i class="fa-brands fa-github"></i>
+<span>GitHub</span>
+</a>
 
-<a class="social-btn" href="https://t.me/abdurrozakskom" target="_blank"><i class="fa-brands fa-telegram"></i>Telegram</a>
+<a class="social-btn" href="https://t.me/abdurrozakskom" target="_blank">
+<i class="fa-brands fa-telegram"></i>
+<span>Telegram</span>
+</a>
 
-<a class="social-btn" href="mailto:abdurrozak.skom@gmail.com"><i class="fa-solid fa-envelope"></i>Email</a>
+<a class="social-btn" href="mailto:abdurrozak.skom@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+<span>Email</span>
+</a>
 
-<a class="social-btn" href="https://abdurrozak.my.id" target="_blank"><i class="fa-solid fa-globe"></i>Website</a>
+<a class="social-btn" href="https://abdurrozak.my.id" target="_blank">
+<i class="fa-solid fa-globe"></i>
+<span>Website</span>
+</a>
+
+<a class="social-btn" href="https://www.youtube.com/@JackTersakiti" target="_blank">
+<i class="fa-brands fa-youtube"></i>
+<span>YouTube</span>
+</a>
+
+<a class="social-btn" href="https://guru.kemendikdasmen.go.id/profil/3J9RjxRM9Y" target="_blank">
+<i class="fa-solid fa-graduation-cap"></i>
+<span>RuangGTK</span>
+</a>
 
 </div>
 
@@ -210,21 +232,20 @@ font-size:14px;
 
 function sendHeight(){
 
-const h=Math.max(
-document.body.scrollHeight,
-document.documentElement.scrollHeight
-);
+    const h = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight
+    );
 
-parent.postMessage({
-type:"embed-size",
-height:h
-},"*");
+    parent.postMessage({
+        type:"embed-size",
+        height:h
+    },"*");
 
 }
 
-window.addEventListener("load",sendHeight);
-
-window.addEventListener("resize",sendHeight);
+window.addEventListener("load", sendHeight);
+window.addEventListener("resize", sendHeight);
 
 new ResizeObserver(sendHeight).observe(document.body);
 
